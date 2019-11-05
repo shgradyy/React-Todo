@@ -30,7 +30,6 @@ class App extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     this.setState({todoList: [...this.state.todoList, this.state.todoItem]})
-        
   }
   
   render() {
@@ -40,6 +39,8 @@ class App extends Component {
         <Todo items={this.state.todoList} />
         <form onSubmit={this.handleSubmit}>
         <input type="text" onKeyDown={this.handleKeyDown} />
+        <button onClick={this.handleSubmit}>Add Item</button>
+        <button>Clear Completed</button>
         </form>
       </div>
     );
